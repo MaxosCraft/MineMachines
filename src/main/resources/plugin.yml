@@ -5,7 +5,7 @@ api-version: '1.18'
 prefix: MineMachines
 author: Maxos
 load: POSTWORLD
-loadbefore:
+softdepend:
   - Multiverse-Core
 description: test
 website: t.me/official_maxos
@@ -17,7 +17,6 @@ commands:
       - mine
       - mining
     permission: minemachines.admin
-    permission-message: "Недостаточно прав!"
 
 permissions:
   minemachines.admin:

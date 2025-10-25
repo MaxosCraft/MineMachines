@@ -10,7 +10,6 @@ import me.maxos.different.mineMachines.model.machines.InstallMachine
 import me.maxos.different.mineMachines.model.videocard.VideoCard
 import me.maxos.different.mineMachines.utils.logError
 import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.File
 
@@ -47,7 +46,7 @@ class DatabaseManager(
 		plugin.logger.info("База данных H2 подключена успешно!")
 	}
 
-	fun delMachineFromDB(world: String, x: Int, y: Int, z: Int) {
+	fun delMachineFromDb(world: String, x: Int, y: Int, z: Int) {
 
 		transaction {
 			MachineDataTable.deleteWhere {
@@ -158,7 +157,7 @@ class DatabaseManager(
 	}
 
 
-	fun loadMachinesFromDB(): List<InstallMachine> {
+	fun loadMachinesFromDb(): List<InstallMachine> {
 
 		val machinesList = mutableListOf<InstallMachine>()
 

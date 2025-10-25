@@ -52,7 +52,7 @@ class MachinesContainer(
 			if (machineModel == null) {
 				location.block.type = Material.AIR
 				installedMachinesMap.remove(location)
-				databaseManager.delMachineFromDB(location.world.name, location.blockX, location.blockY, location.blockZ)
+				databaseManager.delMachineFromDb(location.world.name, location.blockX, location.blockY, location.blockZ)
 				return@inner
 			}
 
@@ -141,7 +141,7 @@ class MachinesContainer(
 
 	private fun getAllMachinesFromDB() {
 
-		val machinesList = databaseManager.loadMachinesFromDB()
+		val machinesList = databaseManager.loadMachinesFromDb()
 
 		machinesList.forEach { machine ->
 
@@ -154,12 +154,12 @@ class MachinesContainer(
 				if (location.block.type != Material.AIR) {
 					putMachineInMap(location.clone(), machine)
 				} else {
-					databaseManager.delMachineFromDB(machine.world, machine.x, machine.y, machine.z)
+					databaseManager.delMachineFromDb(machine.world, machine.x, machine.y, machine.z)
 					logWarn("Машина на координатах ${machine.x}, ${machine.y}, ${machine.z} не обнаружена и была удалена!")
 				}
 
 			} else {
-				databaseManager.delMachineFromDB(machine.world, machine.x, machine.y, machine.z)
+				databaseManager.delMachineFromDb(machine.world, machine.x, machine.y, machine.z)
 				logWarn("Мир ${machine.world} не обнаружен! Удаляем ферму на координатах: ${machine.x}, ${machine.y}, ${machine.z}")
 			}
 
@@ -215,7 +215,7 @@ class MachinesContainer(
 		if (shulkerUuid != null) lightingMachine.killShulker(shulkerUuid)
 
 		installedMachinesMap.remove(location)
-		databaseManager.delMachineFromDB(location.world.name, location.blockX, location.blockY, location.blockZ)
+		databaseManager.delMachineFromDb(location.world.name, location.blockX, location.blockY, location.blockZ)
 	}
 
 	fun getMap() = installedMachinesMap.toMap()
