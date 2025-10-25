@@ -1,0 +1,24 @@
+name: MineMachines
+version: '1.0'
+main: me.maxos.different.mineMachines.MineMachines
+api-version: '1.18'
+prefix: MineMachines
+author: Maxos
+load: POSTWORLD
+loadbefore:
+  - Multiverse-Core
+description: test
+website: t.me/official_maxos
+commands:
+  minemachines:
+    aliases:
+      - mm
+      - machines
+      - mine
+      - mining
+    permission: minemachines.admin
+    permission-message: "Недостаточно прав!"
+
+permissions:
+  minemachines.admin:
+    default: op

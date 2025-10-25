@@ -1,0 +1,83 @@
+
+main-menu:
+  title: "&0Меню майнинг-фермы"
+  size: FIVE
+
+  decoration-items:
+
+    glass:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+      lore: [ ]
+      slots: [ 0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,37,38,39,40,41,42,43,44 ]
+
+  required-items:
+    info:
+      material: HEAVY_CORE
+      name: "&dИНФОРМАЦИЯ О МАШИНЕ"
+      lore:
+        - ""
+        - "&fВладелец: &e{owner}"
+        - "&fСлотов под видеокарты: &b{max-gpu}"
+        - "&fСкорость производства: &a{profits}"
+        - ""
+      slots: [ 22 ]
+    balance:
+      material: RAW_GOLD
+      name: "&eБАЛАНС"
+      lore:
+        - ""
+        - "&fНакопления: &a{balance}"
+        - "&7Нажмите, чтобы вывести накопления"
+        - ""
+      slots: [ 20 ]
+    videocards:
+      material: NETHERITE_INGOT
+      name: "&bВИДЕОКАРТЫ"
+      lore:
+        - ""
+        - "&fВидеокарт: &a{amount-gpu}"
+        - "&7Нажмите, чтобы перейти в меню видеокарт"
+        - ""
+      slots: [ 24 ]
+
+videocards-menu:
+  title: "&0Слоты видеокарт"
+  size: FIVE
+
+  decoration-items:
+    glass:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+      lore: [ ]
+      slots: [ 0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,37,38,39,40,41,42,43,44 ]
+
+  cards-slots: [20,21,22,23,24]
+
+  control-buttons:
+    next:
+      material: ARROW
+      name: "&eСледующая страница"
+      lore:
+        - ""
+      slots: [ 41 ]
+    back:
+      material: ARROW
+      name: "&eПредыдущая страница"
+      lore:
+        - ""
+      slots: [ 39 ]
+    home:
+      material: BARRIER
+      name: "&cВернуться назад"
+      lore:
+        - ""
+      slots: [ 40 ]
+
+# ПЛЕЙСХОЛДЕРЫ (можно использовать в required-items)
+#
+#  {owner}      - владелец фермы
+#  {profits}    - прибыль фермы в секунду
+#  {balance}    - баланс фермы
+#  {amount-gpu} - кол-во активных видеокарт
+#  {max-gpu}    - максимальное кол-во видеокарт
